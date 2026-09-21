@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_adminActivityLogFragment"
+        app:destination="@id/adminActivityLogFragment" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.devpilotai.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminLoginFragment"
+            app:destination="@id/adminLoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminLoginFragment"
+        android:name="com.example.devpilotai.ui.admin.AdminLoginFragment"
+        android:label="Admin Login"
+        tools:layout="@layout/fragment_admin_login">
+        <action
+            android:id="@+id/action_adminLoginFragment_to_adminDashboardFragment"
+            app:destination="@id/adminDashboardFragment"
+            app:popUpTo="@id/adminLoginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.example.devpilotai.ui.admin.AdminDashboardFragment"
+        android:label="Admin Dashboard"
+        tools:layout="@layout/fragment_admin_dashboard">
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_userManagementFragment"
+            app:destination="@id/userManagementFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_chatMonitoringFragment"
+            app:destination="@id/chatMonitoringFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_ocrMonitoringFragment"
+            app:destination="@id/ocrMonitoringFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_analyticsFragment"
+            app:destination="@id/analyticsFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_githubMonitoringFragment"
+            app:destination="@id/githubMonitoringFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_adminSettingsFragment"
+            app:destination="@id/adminSettingsFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_adminActivityLogFragment"
+            app:destination="@id/adminActivityLogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminSettingsFragment"
+        android:name="com.example.devpilotai.ui.admin.AdminSettingsFragment"
+        android:label="Admin Settings"
+        tools:layout="@layout/fragment_admin_settings" />
+
+    <fragment
+        android:id="@+id/userManagementFragment"
+        android:name="com.example.devpilotai.ui.admin.UserManagementFragment"
+        android:label="User Management"
+        tools:layout="@layout/fragment_user_management" />
+
+    <fragment
+        android:id="@+id/chatMonitoringFragment"
+        android:name="com.example.devpilotai.ui.admin.ChatMonitoringFragment"
+        android:label="AI Chat Monitoring"
+        tools:layout="@layout/fragment_chat_monitoring" />
+
+    <fragment
+        android:id="@+id/ocrMonitoringFragment"
+        android:name="com.example.devpilotai.ui.admin.OcrMonitoringFragment"
+        android:label="OCR Monitoring"
+        tools:layout="@layout/fragment_ocr_monitoring" />
+
+    <fragment
+        android:id="@+id/githubMonitoringFragment"
+        android:name="com.example.devpilotai.ui.admin.GitHubMonitoringFragment"
+        android:label="GitHub Monitoring"
+        tools:layout="@layout/fragment_github_monitoring" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.example.devpilotai.ui.admin.AnalyticsFragment"
+        android:label="System Analytics"
+        tools:layout="@layout/fragment_analytics" />
+
+    <fragment
+        android:id="@+id/adminActivityLogFragment"
+        android:name="com.example.devpilotai.ui.admin.AdminActivityLogFragment"
+        android:label="Admin Activity Log"
+        tools:layout="@layout/fragment_admin_activity_log" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.devpilotai.ui.register.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.devpilotai.ui.forgotpassword.ForgotPasswordFragment"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.devpilotai.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_ocrFragment"
+            app:destination="@id/ocrFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_snippetListFragment"
+            app:destination="@id/snippetListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_notesListFragment"
+            app:destination="@id/notesListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_githubLoginFragment"
+            app:destination="@id/githubLoginFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_githubDashboardFragment"
+            app:destination="@id/githubDashboardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_challengeListFragment"
+            app:destination="@id/challengeListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_statsFragment"
+            app:destination="@id/statsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.devpilotai.ui.chat.ChatFragment"
+        android:label="AI Chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/ocrFragment"
+        android:name="com.example.devpilotai.ui.ocr.OcrFragment"
+        android:label="OCR Scanner"
+        tools:layout="@layout/fragment_ocr">
+        <action
+            android:id="@+id/action_ocrFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/snippetListFragment"
+        android:name="com.example.devpilotai.ui.snippet.SnippetListFragment"
+        android:label="Snippets"
+        tools:layout="@layout/fragment_snippet_list">
+        <action
+            android:id="@+id/action_snippetListFragment_to_snippetDetailFragment"
+            app:destination="@id/snippetDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/snippetDetailFragment"
+        android:name="com.example.devpilotai.ui.snippet.SnippetDetailFragment"
+        android:label="Snippet Detail"
+        tools:layout="@layout/fragment_snippet_detail">
+        <argument
+            android:name="snippetId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notesListFragment"
+        android:name="com.example.devpilotai.ui.notes.NotesListFragment"
+        android:label="Notes"
+        tools:layout="@layout/fragment_notes_list">
+        <action
+            android:id="@+id/action_notesListFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.devpilotai.ui.notes.NoteDetailFragment"
+        android:label="Note Detail"
+        tools:layout="@layout/fragment_note_detail">
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/githubLoginFragment"
+        android:name="com.example.devpilotai.ui.github.GitHubLoginFragment"
+        android:label="GitHub Login"
+        tools:layout="@layout/fragment_github_login">
+        <action
+            android:id="@+id/action_githubLoginFragment_to_githubDashboardFragment"
+            app:destination="@id/githubDashboardFragment"
+            app:popUpTo="@id/githubLoginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/githubDashboardFragment"
+        android:name="com.example.devpilotai.ui.github.GitHubDashboardFragment"
+        android:label="GitHub"
+        tools:layout="@layout/fragment_github_dashboard">
+        <action
+            android:id="@+id/action_githubDashboardFragment_to_githubRepoDetailFragment"
+            app:destination="@id/githubRepoDetailFragment" />
+        <action
+            android:id="@+id/action_githubDashboardFragment_to_githubLoginFragment"
+            app:destination="@id/githubLoginFragment"
+            app:popUpTo="@id/githubDashboardFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/githubRepoDetailFragment"
+        android:name="com.example.devpilotai.ui.github.GitHubRepoDetailFragment"
+        android:label="Repo Detail"
+        tools:layout="@layout/fragment_github_repo_detail">
+        <argument
+            android:name="owner"
+            app:argType="string" />
+        <argument
+            android:name="repoName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.devpilotai.ui.dashboard.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/challengeListFragment"
+        android:name="com.example.devpilotai.ui.challenge.ChallengeListFragment"
+        android:label="Challenges"
+        tools:layout="@layout/fragment_challenge_list">
+        <action
+            android:id="@+id/action_challengeListFragment_to_challengeSolveFragment"
+            app:destination="@id/challengeSolveFragment" />
+        <action
+            android:id="@+id/action_challengeListFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/challengeSolveFragment"
+        android:name="com.example.devpilotai.ui.challenge.ChallengeSolveFragment"
+        android:label="Solve"
+        tools:layout="@layout/fragment_challenge_solve">
+        <argument
+            android:name="challengeId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.devpilotai.ui.challenge.LeaderboardFragment"
+        android:label="Leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.devpilotai.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.devpilotai.ui.dashboard.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.devpilotai.ui.dashboard.StatsFragment"
+        android:label="Statistics"
+        tools:layout="@layout/fragment_stats" />
+
+</navigation>
