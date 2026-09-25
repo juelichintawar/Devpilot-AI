@@ -23,12 +23,13 @@ Follow these steps to set up the project on your local machine and get it runnin
    - Download the `google-services.json` file and place it in the `app/` directory.
    - Enable **Email/Password** and **Google** sign-in providers in the Firebase Authentication section.
 
-3. **API Keys**
-   - **Gemini API**: Obtain an API key from [Google AI Studio](https://aistudio.google.com/).
-   - Open `app/build.gradle.kts` and replace the `GEMINI_API_KEY` value or add it to your `local.properties`.
-   ```kotlin
-   buildConfigField("String", "GEMINI_API_KEY", "\"YOUR_ACTUAL_KEY_HERE\"")
-   ```
+3. ### AI Configuration
+
+DevPilot AI uses Firebase AI Logic with the Gemini Developer API.
+
+No Gemini API key is hardcoded in the Android application.
+
+The AI model is configured through Firebase AI Logic in `GeminiAIService.java`.
 
 4. **GitHub Integration (Optional)**
    - Create a GitHub OAuth App or Personal Access Token if you plan to test the GitHub features extensively.
